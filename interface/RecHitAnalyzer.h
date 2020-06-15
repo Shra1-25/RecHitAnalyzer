@@ -140,7 +140,7 @@ class RecHitAnalyzer : public edm::one::EDAnalyzer<edm::one::SharedResources>  {
     //void branchesEvtSel         ( TTree*, edm::Service<TFileService>& );
     //void branchesEvtSel_jet     ( TTree*, edm::Service<TFileService>& );
     void branchesEB             ( TTree*, edm::Service<TFileService>& );
-    void branchesEE             ( TTree*, edm::Service<TFileService>& );
+    /*void branchesEE             ( TTree*, edm::Service<TFileService>& );
     void branchesHBHE           ( TTree*, edm::Service<TFileService>& );
     void branchesECALatHCAL     ( TTree*, edm::Service<TFileService>& );
     void branchesECALstitched   ( TTree*, edm::Service<TFileService>& );
@@ -153,12 +153,12 @@ class RecHitAnalyzer : public edm::one::EDAnalyzer<edm::one::SharedResources>  {
     //void branchesTRKlayersAtECAL( TTree*, edm::Service<TFileService>& );
     void branchesTRKvolumeAtEBEE( TTree*, edm::Service<TFileService>& );
     //void branchesTRKvolumeAtECAL( TTree*, edm::Service<TFileService>& );
-    void branchesJetInfoAtECALstitched   ( TTree*, edm::Service<TFileService>& );
+    void branchesJetInfoAtECALstitched   ( TTree*, edm::Service<TFileService>& );*/
 
     bool runEvtSel          ( const edm::Event&, const edm::EventSetup& );
     bool runEvtSel_jet      ( const edm::Event&, const edm::EventSetup& );
     void fillEB             ( const edm::Event&, const edm::EventSetup& );
-    void fillEE             ( const edm::Event&, const edm::EventSetup& );
+    /*void fillEE             ( const edm::Event&, const edm::EventSetup& );
     void fillHBHE           ( const edm::Event&, const edm::EventSetup& );
     void fillECALatHCAL     ( const edm::Event&, const edm::EventSetup& );
     void fillECALstitched   ( const edm::Event&, const edm::EventSetup& );
@@ -167,16 +167,16 @@ class RecHitAnalyzer : public edm::one::EDAnalyzer<edm::one::SharedResources>  {
     void fillTracksAtECALstitched   ( const edm::Event&, const edm::EventSetup& );
     void fillPFCandsAtEBEE   ( const edm::Event&, const edm::EventSetup& );
     void fillPFCandsAtECALstitched   ( const edm::Event&, const edm::EventSetup& );
-    void fillTRKlayersAtEBEE( const edm::Event&, const edm::EventSetup& );
+    void fillTRKlayersAtEBEE( const edm::Event&, const edm::EventSetup& );*/
     //void fillTRKlayersAtECAL( const edm::Event&, const edm::EventSetup& );
-    void fillTRKvolumeAtEBEE( const edm::Event&, const edm::EventSetup& );
+    //void fillTRKvolumeAtEBEE( const edm::Event&, const edm::EventSetup& );
     //void fillTRKvolumeAtECAL( const edm::Event&, const edm::EventSetup& );
-    void fillJetInfoAtECALstitched   ( const edm::Event&, const edm::EventSetup& );
+    //void fillJetInfoAtECALstitched   ( const edm::Event&, const edm::EventSetup& );
 
-    const reco::PFCandidate* getPFCand(edm::Handle<PFCollection> pfCands, float eta, float phi, float& minDr, bool debug = false);
-    const reco::Track* getTrackCand(edm::Handle<reco::TrackCollection> trackCands, float eta, float phi, float& minDr, bool debug = false);
-    int   getTruthLabel(const reco::PFJetRef& recJet, edm::Handle<reco::GenParticleCollection> genParticles, float dRMatch = 0.4, bool debug = false);
-    float getBTaggingValue(const reco::PFJetRef& recJet, edm::Handle<edm::View<reco::Jet> >& recoJetCollection, edm::Handle<reco::JetTagCollection>& btagCollection, float dRMatch = 0.1, bool debug= false );
+    //const reco::PFCandidate* getPFCand(edm::Handle<PFCollection> pfCands, float eta, float phi, float& minDr, bool debug = false);
+    //const reco::Track* getTrackCand(edm::Handle<reco::TrackCollection> trackCands, float eta, float phi, float& minDr, bool debug = false);
+    //int   getTruthLabel(const reco::PFJetRef& recJet, edm::Handle<reco::GenParticleCollection> genParticles, float dRMatch = 0.4, bool debug = false);
+    //float getBTaggingValue(const reco::PFJetRef& recJet, edm::Handle<edm::View<reco::Jet> >& recoJetCollection, edm::Handle<reco::JetTagCollection>& btagCollection, float dRMatch = 0.1, bool debug= false );
 
     // Jet level functions
     std::string mode_;  // EventLevel / JetLevel
@@ -186,12 +186,12 @@ class RecHitAnalyzer : public edm::one::EDAnalyzer<edm::one::SharedResources>  {
     double maxJetEta_;
     double z0PVCut_;
     std::vector<int> vJetIdxs;
-    void branchesEvtSel_jet_dijet      ( TTree*, edm::Service<TFileService>& );
-    void branchesEvtSel_jet_dijet_gg_qq( TTree*, edm::Service<TFileService>& );
-    bool runEvtSel_jet_dijet      ( const edm::Event&, const edm::EventSetup& );
-    bool runEvtSel_jet_dijet_gg_qq( const edm::Event&, const edm::EventSetup& );
-    void fillEvtSel_jet_dijet      ( const edm::Event&, const edm::EventSetup& );
-    void fillEvtSel_jet_dijet_gg_qq( const edm::Event&, const edm::EventSetup& );
+    //void branchesEvtSel_jet_dijet      ( TTree*, edm::Service<TFileService>& );
+    //void branchesEvtSel_jet_dijet_gg_qq( TTree*, edm::Service<TFileService>& );
+    //bool runEvtSel_jet_dijet      ( const edm::Event&, const edm::EventSetup& );
+    //bool runEvtSel_jet_dijet_gg_qq( const edm::Event&, const edm::EventSetup& );
+    //void fillEvtSel_jet_dijet      ( const edm::Event&, const edm::EventSetup& );
+    //void fillEvtSel_jet_dijet_gg_qq( const edm::Event&, const edm::EventSetup& );
 
     int nTotal, nPassed;
 
