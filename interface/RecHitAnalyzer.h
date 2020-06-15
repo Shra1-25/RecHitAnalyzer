@@ -138,7 +138,7 @@ class RecHitAnalyzer : public edm::one::EDAnalyzer<edm::one::SharedResources>  {
   
     // Selection and filling functions
     //void branchesEvtSel         ( TTree*, edm::Service<TFileService>& );
-    void branchesEvtSel_jet     ( TTree*, edm::Service<TFileService>& );
+    //void branchesEvtSel_jet     ( TTree*, edm::Service<TFileService>& );
     void branchesEB             ( TTree*, edm::Service<TFileService>& );
     void branchesEE             ( TTree*, edm::Service<TFileService>& );
     void branchesHBHE           ( TTree*, edm::Service<TFileService>& );
