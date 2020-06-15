@@ -74,7 +74,7 @@ RecHitAnalyzer::RecHitAnalyzer(const edm::ParameterSet& iConfig)
     branchesEvtSel( RHTree, fs );
   }
   branchesEB           ( RHTree, fs );
-  branchesEE           ( RHTree, fs );
+  //branchesEE           ( RHTree, fs );
   /*branchesHBHE         ( RHTree, fs );
   branchesECALatHCAL   ( RHTree, fs );
   branchesECALstitched ( RHTree, fs );
@@ -285,7 +285,7 @@ RecHitAnalyzer::getTrackCand(edm::Handle<reco::TrackCollection> trackCands, floa
 }*/
 
 
-float RecHitAnalyzer::getBTaggingValue(const reco::PFJetRef& recJet, edm::Handle<edm::View<reco::Jet> >& recoJetCollection, edm::Handle<reco::JetTagCollection>& btagCollection, float dRMatch, bool debug ){
+/*float RecHitAnalyzer::getBTaggingValue(const reco::PFJetRef& recJet, edm::Handle<edm::View<reco::Jet> >& recoJetCollection, edm::Handle<reco::JetTagCollection>& btagCollection, float dRMatch, bool debug ){
 
   // loop over jets
   for( edm::View<reco::Jet>::const_iterator jetToMatch = recoJetCollection->begin(); jetToMatch != recoJetCollection->end(); ++jetToMatch )
@@ -319,7 +319,7 @@ float RecHitAnalyzer::getBTaggingValue(const reco::PFJetRef& recJet, edm::Handle
   }    
 
   return -99;
-}
+}*/
 
 
 
