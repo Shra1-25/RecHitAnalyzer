@@ -75,19 +75,19 @@ RecHitAnalyzer::RecHitAnalyzer(const edm::ParameterSet& iConfig)
   }
   branchesEB           ( RHTree, fs );
   branchesEE           ( RHTree, fs );
-  branchesHBHE         ( RHTree, fs );
+  /*branchesHBHE         ( RHTree, fs );
   branchesECALatHCAL   ( RHTree, fs );
   branchesECALstitched ( RHTree, fs );
   branchesHCALatEBEE   ( RHTree, fs );
   branchesTracksAtEBEE(RHTree, fs);
   branchesTracksAtECALstitched( RHTree, fs);
   branchesPFCandsAtEBEE(RHTree, fs);
-  branchesPFCandsAtECALstitched( RHTree, fs);
+  branchesPFCandsAtECALstitched( RHTree, fs);*/
   //branchesTRKlayersAtEBEE(RHTree, fs);
   //branchesTRKlayersAtECAL(RHTree, fs);
   //branchesTRKvolumeAtEBEE(RHTree, fs);
   //branchesTRKvolumeAtECAL(RHTree, fs);
-  branchesJetInfoAtECALstitched( RHTree, fs);
+  //branchesJetInfoAtECALstitched( RHTree, fs);
 
   // For FC inputs
   //RHTree->Branch("FC_inputs",      &vFC_inputs_);
@@ -127,20 +127,20 @@ RecHitAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
   }
 
   fillEB( iEvent, iSetup );
-  fillEE( iEvent, iSetup );
-  fillHBHE( iEvent, iSetup );
-  fillECALatHCAL( iEvent, iSetup );
-  fillECALstitched( iEvent, iSetup );
-  fillHCALatEBEE( iEvent, iSetup );
-  fillTracksAtEBEE( iEvent, iSetup );
-  fillTracksAtECALstitched( iEvent, iSetup );
-  fillPFCandsAtEBEE( iEvent, iSetup );
-  fillPFCandsAtECALstitched( iEvent, iSetup );
+  //fillEE( iEvent, iSetup );
+  //fillHBHE( iEvent, iSetup );
+  //fillECALatHCAL( iEvent, iSetup );
+  //fillECALstitched( iEvent, iSetup );
+  //fillHCALatEBEE( iEvent, iSetup );
+  //fillTracksAtEBEE( iEvent, iSetup );
+  //fillTracksAtECALstitched( iEvent, iSetup );
+  //fillPFCandsAtEBEE( iEvent, iSetup );
+  //fillPFCandsAtECALstitched( iEvent, iSetup );
   //fillTRKlayersAtEBEE( iEvent, iSetup );
   //fillTRKlayersAtECAL( iEvent, iSetup );
   //fillTRKvolumeAtEBEE( iEvent, iSetup );
   //fillTRKvolumeAtECAL( iEvent, iSetup );
-  fillJetInfoAtECALstitched( iEvent, iSetup );
+  //fillJetInfoAtECALstitched( iEvent, iSetup );
 
   ////////////// 4-Momenta //////////
   //fillFC( iEvent, iSetup );
@@ -184,8 +184,8 @@ RecHitAnalyzer::fillDescriptions(edm::ConfigurationDescriptions& descriptions) {
   //descriptions.addDefault(desc);
 }
 
-const reco::PFCandidate*
-RecHitAnalyzer::getPFCand(edm::Handle<PFCollection> pfCands, float eta, float phi, float& minDr, bool debug ) {
+//const reco::PFCandidate*
+/*RecHitAnalyzer::getPFCand(edm::Handle<PFCollection> pfCands, float eta, float phi, float& minDr, bool debug ) {
 
   minDr = 10;
   const reco::PFCandidate* minDRCand = nullptr;
@@ -208,9 +208,9 @@ RecHitAnalyzer::getPFCand(edm::Handle<PFCollection> pfCands, float eta, float ph
   }
 
   return minDRCand;  
-}
+}*/
 
-const reco::Track*
+/*const reco::Track*
 RecHitAnalyzer::getTrackCand(edm::Handle<reco::TrackCollection> trackCands, float eta, float phi, float& minDr, bool debug ) {
 
   minDr = 10;
@@ -233,12 +233,12 @@ RecHitAnalyzer::getTrackCand(edm::Handle<reco::TrackCollection> trackCands, floa
   }
 
   return minDRCand;  
-}
+}*/
 
 
 
 
-int RecHitAnalyzer::getTruthLabel(const reco::PFJetRef& recJet, edm::Handle<reco::GenParticleCollection> genParticles, float dRMatch , bool debug ){
+/*int RecHitAnalyzer::getTruthLabel(const reco::PFJetRef& recJet, edm::Handle<reco::GenParticleCollection> genParticles, float dRMatch , bool debug ){
   if ( debug ) {
     std::cout << " Mathcing reco jetPt:" << recJet->pt() << " jetEta:" << recJet->eta() << " jetPhi:" << recJet->phi() << std::endl;
   }
@@ -275,14 +275,14 @@ int RecHitAnalyzer::getTruthLabel(const reco::PFJetRef& recJet, edm::Handle<reco
 
     return iGen->pdgId();
 
-  } // gen particles 
+  } // gen particles
 
 
 
 
 
   return -99;
-}
+}*/
 
 
 float RecHitAnalyzer::getBTaggingValue(const reco::PFJetRef& recJet, edm::Handle<edm::View<reco::Jet> >& recoJetCollection, edm::Handle<reco::JetTagCollection>& btagCollection, float dRMatch, bool debug ){
