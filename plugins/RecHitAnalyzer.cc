@@ -127,7 +127,7 @@ RecHitAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
   }
 
   fillEB( iEvent, iSetup );
-  cout<<vEB_energy_[0]<<" "<<vEB_energy_[1]<<" "<<vEB_energy_[2]<<endl;
+  std::cout<<vEB_energy_[0]<<" "<<vEB_energy_[1]<<" "<<vEB_energy_[2]<<endl;
   //fillEE( iEvent, iSetup );
   //fillHBHE( iEvent, iSetup );
   //fillECALatHCAL( iEvent, iSetup );
