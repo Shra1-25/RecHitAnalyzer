@@ -1,4 +1,6 @@
 #include "MLAnalyzer/RecHitAnalyzer/interface/RecHitAnalyzer.h"
+#include <iostream>
+using namespace std;
 
 // Fill EB rec hits ////////////////////////////////
 // Store event rechits in a vector of length equal
@@ -59,5 +61,5 @@ void RecHitAnalyzer::fillEB ( const edm::Event& iEvent, const edm::EventSetup& i
     vEB_time_[idx_] = iRHit->time();
 
   } // EB rechits
-
+std::cout<<vEB_energy_[0]<<" "<<vEB_energy_[1]<<" "<<vEB_energy_[2]<<endl;
 } // fillEB()
