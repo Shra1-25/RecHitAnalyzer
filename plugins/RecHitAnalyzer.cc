@@ -68,11 +68,11 @@ RecHitAnalyzer::RecHitAnalyzer(const edm::ParameterSet& iConfig)
 
   // These will be use to create the actual images
   RHTree = fs->make<TTree>("RHTree", "RecHit tree");
-  if ( doJets_ ) {
+  /*if ( doJets_ ) {
     branchesEvtSel_jet( RHTree, fs );
   } else {
     branchesEvtSel( RHTree, fs );
-  }
+  }*/
   branchesEB           ( RHTree, fs );
   //branchesEE           ( RHTree, fs );
   /*branchesHBHE         ( RHTree, fs );
@@ -127,6 +127,7 @@ RecHitAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
   }
 
   fillEB( iEvent, iSetup );
+  cout<<vEB_energy_[0]<<" "<<vEB_energy_[1]<<" "<<vEB_energy_[2]<<endl;
   //fillEE( iEvent, iSetup );
   //fillHBHE( iEvent, iSetup );
   //fillECALatHCAL( iEvent, iSetup );
