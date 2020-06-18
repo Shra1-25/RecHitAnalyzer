@@ -74,6 +74,21 @@ RecHitAnalyzer::RecHitAnalyzer(const edm::ParameterSet& iConfig)
     branchesEvtSel( RHTree, fs );
   }*/
   branchesEB           ( RHTree, fs );
+  std::cout<<"BranchesEB done "<<std::endl;
+  bool passedSelection = false;
+  if ( doJets_ ) {
+    //passedSelection = runEvtSel_jet( iEvent, iSetup );
+  } 
+  else {
+    //passedSelection = runEvtSel( iEvent, iSetup );
+  }
+
+  if ( !passedSelection ) {
+    h_sel->Fill( 0. );;
+    return;
+  }
+  fillEB( iEvent, iSetup );
+  std::cout<<"FillEB done "<<std::endl;
   //branchesEE           ( RHTree, fs );
   /*branchesHBHE         ( RHTree, fs );
   branchesECALatHCAL   ( RHTree, fs );
