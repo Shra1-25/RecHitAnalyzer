@@ -116,9 +116,9 @@ RecHitAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 
   bool passedSelection = false;
   if ( doJets_ ) {
-    passedSelection = runEvtSel_jet( iEvent, iSetup );
+    //passedSelection = runEvtSel_jet( iEvent, iSetup );
   } else {
-    passedSelection = runEvtSel( iEvent, iSetup );
+    //passedSelection = runEvtSel( iEvent, iSetup );
   }
 
   if ( !passedSelection ) {
