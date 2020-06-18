@@ -33,7 +33,7 @@ process.maxEvents = cms.untracked.PSet(
 
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
-      fileNames="/afs/cern.ch/user/s/schaudha/public/CMSSW_10_6_8/src/demo/ZprimeToTT_M-2000_W-20_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_AODSIM_PUMoriond17.root" #options.inputFiles
+      options.inputFiles
       )
     , skipEvents = cms.untracked.uint32(options.skipEvents)
     )
