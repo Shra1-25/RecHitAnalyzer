@@ -75,7 +75,7 @@ RecHitAnalyzer::RecHitAnalyzer(const edm::ParameterSet& iConfig)
   }*/
   branchesEB           ( RHTree, fs );
   std::cout<<"BranchesEB done "<<std::endl;
-  bool passedSelection = false;
+  /*bool passedSelection = false;
   if ( doJets_ ) {
     //passedSelection = runEvtSel_jet( iEvent, iSetup );
   } 
@@ -87,8 +87,8 @@ RecHitAnalyzer::RecHitAnalyzer(const edm::ParameterSet& iConfig)
     h_sel->Fill( 0. );;
     return;
   }
-  fillEB( iEvent, iSetup );
-  std::cout<<"FillEB done "<<std::endl;
+  fillEB( iEvent, iSetup );*/
+  
   //branchesEE           ( RHTree, fs );
   /*branchesHBHE         ( RHTree, fs );
   branchesECALatHCAL   ( RHTree, fs );
@@ -142,7 +142,7 @@ RecHitAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
   }
 
   fillEB( iEvent, iSetup );
-  
+  std::cout<<"FillEB done "<<std::endl;
   //fillEE( iEvent, iSetup );
   //fillHBHE( iEvent, iSetup );
   //fillECALatHCAL( iEvent, iSetup );
