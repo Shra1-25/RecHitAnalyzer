@@ -61,5 +61,5 @@ void RecHitAnalyzer::fillEB ( const edm::Event& iEvent, const edm::EventSetup& i
     vEB_time_[idx_] = iRHit->time();
 
   } // EB rechits
-std::cout<<vEB_energy_[0]<<" "<<vEB_energy_[1]<<" "<<vEB_energy_[2]<<"size is "<<vEB_energy_.size()<<endl;
+std::cout<<vEB_energy_[0]<<" "<<vEB_energy_[1]<<" "<<vEB_energy_[2]<<" -> size is "<<vEB_energy_.size()<<endl;
 } // fillEB()
