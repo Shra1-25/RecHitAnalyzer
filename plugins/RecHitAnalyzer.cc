@@ -60,8 +60,8 @@ RecHitAnalyzer::RecHitAnalyzer(const edm::ParameterSet& iConfig)
   // Initialize file writer
   // NOTE: initializing dynamic-memory histograms outside of TFileService
   // will cause memory leaks
-  //usesResource("TFileService");
-  //edm::Service<TFileService> fs;
+  usesResource("TFileService");
+  edm::Service<TFileService> fs;
   //h_sel = fs->make<TH1F>("h_sel", "isSelected;isSelected;Events", 2, 0., 2.);
 
   //////////// TTree //////////
