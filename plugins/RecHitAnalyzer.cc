@@ -137,8 +137,8 @@ RecHitAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
   }
 
   if ( !passedSelection ) {
-    h_sel->Fill( 0. );;
-    return;
+    //h_sel->Fill( 0. );;
+    //return;
   }
 
   fillEB( iEvent, iSetup );
@@ -163,9 +163,9 @@ RecHitAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 
   // Fill RHTree
   RHTree->Fill();
-  h_sel->Fill( 1. );
+  //h_sel->Fill( 1. );
   nPassed++;
-
+  return;
 } // analyze()
 
 
@@ -175,6 +175,7 @@ RecHitAnalyzer::beginJob()
 {
   nTotal = 0;
   nPassed = 0;
+  std::cout<<"Job began"<<std::endl;
 }
 
 // ------------ method called once each job just after ending the event loop  ------------
